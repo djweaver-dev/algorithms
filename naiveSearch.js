@@ -9,6 +9,11 @@ const test = 'fizzizzlemynizzlefizzbuzzisizzlebuzzrizzlefizzbuzzizzlefizzbuzz';
 //Once a full match has been made and counter has been incremented
 //you could bypass all the characters used to make that match in the
 //str and jump ahead, ie. i += term.length
+//colt steele's version uses a check for a mismatch and a break statement
+//which avoids the use of my iter variable.  He also initializes the
+//iteration variable of the second for loop (in my case 'j') to zero.
+//I did not do so because the first index was already checked for a match
+//prior to the second for loop being initiated
 
 function naiveSearch(term, str){
     let count = 0;
