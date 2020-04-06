@@ -1,4 +1,4 @@
-const test = 'fizzizzlemynizzlefizzbuzzisizzlebuzzrizzlefizzbuzzizzlefizzbuzz';
+
 
 //O(n^2) time complexity
 
@@ -15,6 +15,8 @@ const test = 'fizzizzlemynizzlefizzbuzzisizzlebuzzrizzlefizzbuzzizzlefizzbuzz';
 //I did not do so because the first index was already checked for a match
 //prior to the second for loop being initiated
 
+const test = 'fizzizzlemynizzlefizzbuzzisizzlebuzzrizzlefizzbuzzizzlefizzbuzz';
+
 function naiveSearch(term, str){
     let count = 0;
     let iter = 0;
@@ -29,6 +31,19 @@ function naiveSearch(term, str){
             }
         }
     }
-    return console.log(`The term "${term}" matched ${count} times.`);
+    console.log(`The term "${term}" matched ${count} times.`);
 }
 naiveSearch('fizzbuzz', test);
+
+
+function betterSearch(term, str){
+    let count = 0;
+    for(let i = 0; i < str.length; i++) {
+        if (str[i] === term[0]){
+            if (term === str.slice(i, i+term.length)) count++;
+        }
+    
+    }
+    console.log(`The term "${term}" matched ${count} times.`);
+}
+betterSearch('fizzbuzz', test);
