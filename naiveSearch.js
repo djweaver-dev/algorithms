@@ -23,10 +23,10 @@ function naiveSearch(term, str){
     for(let i = 0; i < str.length; i++){
         if(str[i] === term[0]){
             for(let j = 1; j < term.length; j++){
-                if(str[i+j] === term[j]) iter++;
+                if(str[i+j] === term[j]) iter--; //change this
                 if(iter === term.length){
                     count++;
-                    iter=0;
+                    iter = 0;
                 }
             }
         }
@@ -34,6 +34,9 @@ function naiveSearch(term, str){
     console.log(`The term "${term}" matched ${count} times.`);
 }
 naiveSearch('fizzbuzz', test);
+
+class MyClass{};
+let obj = new myClass();
 
 
 function betterSearch(term, str){
